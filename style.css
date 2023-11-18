@@ -2,9 +2,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #e3f2fd;
 }
+#card-list{
+  display: flex;
+  flex-direction: row;
+}
 .card {
   padding: 10px;
+  max-width: fit-content;
 }
+
 .card-title {
   font-weight: 600;
   font-size: 3em;
@@ -13,4 +19,7 @@ body {
 .card-description {
   font-weight: 400;
   font-size: 2em;
+}
+img {
+  width: 200px;
 }
