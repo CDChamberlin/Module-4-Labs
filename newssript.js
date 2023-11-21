@@ -15,14 +15,15 @@ function addCard(title, context) {
   document.querySelector("#card-list").appendChild(template);
 }
 function postNews() {
-  const list = document.getElementById("card-template");
+  const list = document.getElementById("card-list");
   while (list.hasChildNodes()) list.removeChild(list.firstChild);
+  console.log(list)
   news.push({
     id: news.length,
     title: document.getElementById("newsTitle").value,
     content: document.getElementById("newsContent").value,
   });
-  console.log(news);
+  //console.log(news);
   update();
   return false;
 }
