@@ -14,11 +14,18 @@ function addCard(title, context) {
   template.querySelector(".card-text").innerText = context;
   document.querySelector("#card-list").appendChild(template);
 }
-function postNews(event){
-    const list = document.getElementById("card-template")
-    while (list.hasChildNodes()) list.removeChild(list.firstChild)
-    news.push(news.length, document.getElementById("newsTitle"), document.getElementById("newsContent"))
-    event.preventDefault();
-
+function postNews() {
+  const list = document.getElementById("card-template");
+  while (list.hasChildNodes()) list.removeChild(list.firstChild);
+  news.push({
+    id: news.length,
+    title: document.getElementById("newsTitle").value,
+    content: document.getElementById("newsContent").value,
+  });
+  console.log(news);
+  update();
+  return false;
 }
-news.forEach((item) => addCard(item.title, item.content));
+function update(){
+  news.forEach((item) => addCard(item.title, item.content));
+}
