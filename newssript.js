@@ -4,7 +4,6 @@ let news = [
   { id: 3, title: "Tornado Warning", content: "Residents should prepare..." },
 ];
 
-
 function addCard(title, context) {
   const template = document
     .getElementById("card-template")
@@ -17,7 +16,7 @@ function addCard(title, context) {
 function postNews() {
   const list = document.getElementById("card-list");
   while (list.hasChildNodes()) list.removeChild(list.firstChild);
-  console.log(list)
+  console.log(list);
   news.push({
     id: news.length,
     title: document.getElementById("newsTitle").value,
@@ -28,6 +27,6 @@ function postNews() {
   update();
   return false;
 }
-function update(){
+function update() {
   news.forEach((item) => addCard(item.title, item.content));
 }
