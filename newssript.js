@@ -24,6 +24,7 @@ function postNews() {
     content: document.getElementById("newsContent").value,
   });
   //console.log(news);
+  document.getElementById("postNews").reset();
   update();
   return false;
 }
