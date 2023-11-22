@@ -2,7 +2,7 @@
 
 Create a Figma prototype for a social media application, where you can post your content and posts from other users are visible. Don’t just jump into Figma, try to follow the design procedure.
 
-# Social Media App: TRPG Character Journies
+# Social Media App: TRPG Character Journeys
 A social media site for posting a commentary of your character's journey and how your character is doing. 
 
 
