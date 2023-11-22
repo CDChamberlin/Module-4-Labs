@@ -11,17 +11,29 @@
     align-items: center;
 }
 .input-control{
-    font-size: 1.5em;
+    font-size: 1.70em;
     align-content: top;
     margin-right: 20px;
 }
 .form-submit{
     margin-top: 10px;
-    font-size: 1.5em;
+    font-size: 1.25em;
     line-height: 1.1;
 }
-@media screen and (max-width: 600px) {
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    }
+@media screen and (min-width: 800px) {
     .column {
-      width: 100%;
+      flex: 2;
     }
   }
