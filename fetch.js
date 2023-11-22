@@ -5,7 +5,7 @@ axios
 .then((response) => response.data.forEach(element => {
     addCard(element.title, element.body);
 }))
-.then((response) => console.log(response));   
+ 
 function addCard(title, context) {
     const template = document
       .getElementById("card-template")
