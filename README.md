@@ -52,3 +52,7 @@ Some prevent default behavior links:
 - You can simply create a form without using an
 actual html `<form>`. Use text field inputs and a
 button with onclick event instead.
+
+## Lab 6: Fetch
+Create a web page that will read the posts from JSON Placeholder using fetch. 
+Similar to the previous templating labs, use bootstrap cards and grids to layout the returned post data from JSON Placeholder on the page.
