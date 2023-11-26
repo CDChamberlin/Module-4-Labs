@@ -5,7 +5,6 @@ Create a Figma prototype for a social media application, where you can post your
 # Social Media App: TRPG Character Journeys
 A social media site for posting a commentary of your character's journey and how your character is doing. 
 
-
  There will be a separation between a GM's perspective and a player's perspective. Also a way to mark campaign's you are in so that content doesn't show up. 
 
 ## Pages needed
