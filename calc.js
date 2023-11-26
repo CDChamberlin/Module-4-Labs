@@ -32,4 +32,6 @@ case '/': result = num1/num2; break;}
 function reset(event) {
   document.getElementById("num1").value = "";
   document.getElementById("num2").value = "";
+document.getElementById('result').value = ""
+
 }
