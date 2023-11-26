@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta author="Collin Chamberlin" />
+    <title>Lab 4 Bootstrap Cards</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <template id="card-template">
+      <article class="card col-lg-3 col-md-6 col-sm-12" style="width: 18rem">
+        <img src="..." class="card-img-top" alt="..." />
+        <section class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </section>
+      </article>
+    </template>
+    <div id="gallery" class="container">
+      <div id="card-list" class="row"></div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Below Script populates 8 cards. -->
+    <script>
+      function isValidHttpUrl(string) {
+        try {
+          const newUrl = new URL(string);
+          return newUrl.protocol === "http:" || newUrl.protocol === "https:";
+        } catch (err) {
+          return false;
+        }
+      }
+      function addCard(
+        title = "My Card Title",
+        text = "lorem ipsum ble bla",
+        url = null
+      ) {
+        // clone the template
+        const template = document
+          .getElementById("card-template")
+          .content.cloneNode(true);
+        // populate the template
+        template.querySelector(".card-title").innerText = title;
+        template.querySelector(".card-text").innerText = text;
+        if (isValidHttpUrl(url)) {
+          template.querySelector(".card-img-top").src = url;
+          template.querySelector(".card-img-top").alt = title + "'s " + text;
+        }
+        // include the populated template into the page
+        console.log(document.querySelector("#card-list"));
+        document.querySelector("#card-list").appendChild(template);
+      }
+      const artist = [
+        {
+          name: "Van Gogh",
+          portfolio: [
+            {
+              title: "Portrait",
+              url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image",
+            },
+            {
+              title: "Sky",
+              url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg",
+            },
+          ],
+        },
+        {
+          name: "Michelangelo",
+          portfolio: [
+            {
+              title: "Sistine Chapel Ceiling",
+              url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Sistine_Chapel_ceiling_02_%28brightened%29.jpg/220px-Sistine_Chapel_ceiling_02_%28brightened%29.jpg",
+            },
+            {
+              title: "The Creation of Adam",
+              url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/270px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg",
+            },
+          ],
+        },
+        {
+          name: "Rembrandt",
+          portfolio: [
+            {
+              title: "Storm on the Sea of Galilee",
+              url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg/800px-Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
+            },
+            {
+              title: "Abduction of Europa",
+              url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Rembrandt_Harmensz._van_Rijn_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg/1280px-Rembrandt_Harmensz._van_Rijn_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg",
+            },
+          ],
+        },
+        {
+          name: "Leonardo",
+          portfolio: [
+            {
+              title: "The Last Supper",
+              url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/%C3%9Altima_Cena_-_Da_Vinci_5.jpg/350px-%C3%9Altima_Cena_-_Da_Vinci_5.jpg",
+            },
+            {
+              title: "Virgin of the Rocks",
+              url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg/280px-Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg",
+            },
+          ],
+        },
+      ];
+
+      // Append child to add image.
+      artist.forEach((art) => {
+        for (i = 0; i < art.portfolio.length; i++) {
+          addCard(
+            art.portfolio[i].title,
+            "A painting by " + art.name,
+            art.portfolio[i].url
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
