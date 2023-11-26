@@ -8,7 +8,7 @@
       .container {
         font-family: arial;
         font-size: 24px;
-        margin: 25px;
+        /* margin: 25px; */
       }
 
       .box {
@@ -17,6 +17,15 @@
         background-color: red;
         /* Center horizontally*/
         margin: 0 auto;
+        animation-name: slider;
+        animation-duration: 10s;
+        animation-iteration-count: 10;
+        animation-direction: alternate;
+      }
+      @keyframes slider{
+        from{ margin-bottom:0}
+        75%{ background-color: blue;}
+        to{margin-top: 100vh;}
       }
     </style>
     <title>Animation Lab 7</title>
