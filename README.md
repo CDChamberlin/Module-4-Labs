@@ -56,3 +56,7 @@ button with onclick event instead.
 ## Lab 6: Fetch
 Create a web page that will read the posts from JSON Placeholder using fetch. 
 Similar to the previous templating labs, use bootstrap cards and grids to layout the returned post data from JSON Placeholder on the page.
+
+## Lab 7: Animation
+Make a square slider so that it slides from the top to the bottom and returns to its original 
+position, changing background color in the process
