@@ -1,4 +1,5 @@
 const now = moment();
+const london = moment.utc()
 const birth = moment("1997-05-15");
 
 const day = now.diff(birth, "days"); // answers first problem
@@ -15,3 +16,5 @@ function eval(event) {
   document.getElementById('result').value = closest
   return false;
 }
+
+document.getElementById('london').innerHTML = london
