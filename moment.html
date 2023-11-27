@@ -61,6 +61,46 @@
         />
       </form>
     </section>
+    <section class="column">
+        <h2>Before and After</h2>
+        <form>
+          <label for="date1" class="input-control"
+            >First Date (as MM/DD/YYYY)</label
+          ><br />
+          <input
+            type="text"
+            id="date1"
+            value=""
+            name="date1"
+            class="input-control"
+          /><br />
+          <label for="date2" class="input-control">
+            Second Date (as MM/DD/YYYY) </label
+          ><br />
+          <input
+            type="text"
+            id="date2"
+            value=""
+            name="date2"
+            class="input-control"
+          /><br />
+          <label for="after" class="input-control"> Result </label><br />
+          <input
+            type="text"
+            id="after"
+            value=""
+            name="result"
+            class="input-control"
+            size="35"
+          /><br />
+          <input
+            class="form-submit"
+            type="submit"
+            value="Submit"
+            onclick="after(event)"
+          />
+        </form>
+      </section>
     <script src="moment.js"></script>
   </body>
 </html>
