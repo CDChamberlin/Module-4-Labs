@@ -70,3 +70,18 @@ below problems:
 3. Given two dates, display the date closest to the current date
 4. Given two dates, display whether the first date is before or after the second date
 5. Display the current time in London
+
+## Lab 9: eCharts
+Adapt the code on the right to make a chart that shows how many items are listed under each category on the Fake Store API.
+- Get data from the FakeStore API (Fetch or Axios the data)
+- Have an eChart bar for each category 
+- Show how many items are listed under each category
+
+## Lab 10: E-Commerce Site
+Create a fake eCommerce website with the data from the Fake Store API.
+- Fetch or Axios the API data 
+- Create Bootstrap cards to display the items, including the image, title, price, item description
+- Create drop down selection to choose individual product categories
+- (Optional extra 1) Create a search for item feature
+- (Optional extra 2) Add custom icons to each card (To show item category)
+- (Optional extra 3) Include a sorting feature to sort items by price or title
