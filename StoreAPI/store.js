@@ -1,3 +1,4 @@
+let productList = [];
 function addCard(img, title, price, description) {
   const template = document
     .getElementById("card-template")
@@ -18,6 +19,7 @@ fetch("https://fakestoreapi.com/products")
   .then((json) => {
     json.forEach((element) => {
       addCard(element.image, element.title, element.price, element.description);
+      productList.push(element)
     });
   });
 
@@ -28,4 +30,15 @@ function isValidHttpUrl(string) {
   } catch (err) {
     return false;
   }
+}
+console.log(productList)
+function update(){ //dropdown selected.
+    const list = document.getElementById("card-list");
+    const selected = "" // Gets the selections from the dropdown menu.
+  while (list.hasChildNodes()) list.removeChild(list.firstChild);
+    let updated = productList.filter(item =>{
+        return item.category === selected
+    })
+    update.forEach((element) => {
+        addCard(element.image, element.title, element.price, element.description);})
 }
