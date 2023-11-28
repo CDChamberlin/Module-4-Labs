@@ -32,26 +32,28 @@ function isValidHttpUrl(string) {
   }
 }
 console.log(productList);
-// function update(){ //dropdown selected.
-//     const list = document.getElementById("card-list");
-//     const selected = "" // Gets the selections from the dropdown menu.
+function filterCatagories(event){ //dropdown selected.
+    const list = document.getElementById("card-list");
+    const selected = event.target.value // Gets the selections from the dropdown menu.
+  while (list.hasChildNodes()) list.removeChild(list.firstChild);  
+  let updated = productList.filter(item =>{
+        return item.category === selected
+    })
+    if (selected === "all Catagories") productList.forEach((element) => {
+      addCard(element.image, element.title, element.price, element.description);})
+    updated.forEach((element) => {
+        addCard(element.image, element.title, element.price, element.description);})
+}
+// Hard way
+// const selectedCatagory = document.getElementById("Catagories");
+// selectedCatagory.addEventListener("change", (event) => {
+//   const list = document.getElementById("card-list");
+//   const selected = event.target.value; // Gets the selections from the dropdown menu.
 //   while (list.hasChildNodes()) list.removeChild(list.firstChild);
-//     let updated = productList.filter(item =>{
-//         return item.category === selected
-//     })
-//     update.forEach((element) => {
-//         addCard(element.image, element.title, element.price, element.description);})
-// }
-
-const selectedCatagory = document.getElementById("Catagories");
-selectedCatagory.addEventListener("change", (event) => {
-  const list = document.getElementById("card-list");
-  const selected = event.target.value; // Gets the selections from the dropdown menu.
-  while (list.hasChildNodes()) list.removeChild(list.firstChild);
-  let updated = productList.filter((item) => {
-    return item.category === selected;
-  });
-  updated.forEach((element) => {
-    addCard(element.image, element.title, element.price, element.description);
-  });
-});
+//   let updated = productList.filter((item) => {
+//     return item.category === selected;
+//   });
+//   updated.forEach((element) => {
+//     addCard(element.image, element.title, element.price, element.description);
+//   });
+// });

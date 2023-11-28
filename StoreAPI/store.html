@@ -32,8 +32,8 @@
       <div id="card-list" class="row"></div>
     </div>
     <label for="Catagories">Product Selector</label>
-    <select name="Catagories" id="Catagories" class="dropdown">
-      <option value="base"></option>
+    <select name="Catagories" id="Catagories" class="dropdown" onchange="filterCatagories(event)">
+      <option value="all Catagories" defaultValue>All Catagories</option>
       <option value="electronics">Electronics</option>
       <option value="jewelery">Jewelry</option>
       <option value="men's clothing">Men's Clothing</option>
