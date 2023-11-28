@@ -27,18 +27,21 @@
         </section>
       </article>
     </template>
+    <div class="sticky-top" style="align-items: end;">
+      <label for="Catagories" > Product Selector</label>
+      <select name="Catagories" id="Catagories" class="dropdown" onchange="filterCatagories(event)">
+        <option value="all Catagories" defaultValue>All Catagories</option>
+        <option value="electronics">Electronics</option>
+        <option value="jewelery">Jewelry</option>
+        <option value="men's clothing">Men's Clothing</option>
+        <option value="women's clothing">Women's Clothing</option>
+      </select>
+    </div>
 
     <div id="gallery" class="container">
       <div id="card-list" class="row"></div>
     </div>
-    <label for="Catagories">Product Selector</label>
-    <select name="Catagories" id="Catagories" class="dropdown" onchange="filterCatagories(event)">
-      <option value="all Catagories" defaultValue>All Catagories</option>
-      <option value="electronics">Electronics</option>
-      <option value="jewelery">Jewelry</option>
-      <option value="men's clothing">Men's Clothing</option>
-      <option value="women's clothing">Women's Clothing</option>
-    </select>
+    
     <script
       src="https://unpkg.com/@popperjs/core@2"
       crossorigin="anonymous"
