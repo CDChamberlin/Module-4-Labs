@@ -32,17 +32,24 @@ function isValidHttpUrl(string) {
   }
 }
 console.log(productList);
-function filterCatagories(event){ //dropdown selected.
-    const list = document.getElementById("card-list");
-    const selected = event.target.value // Gets the selections from the dropdown menu.
-  while (list.hasChildNodes()) list.removeChild(list.firstChild);  
-  let updated = productList.filter(item =>{
-        return item.category === selected
-    })
-    if (selected === "all Catagories") productList.forEach((element) => {
-      addCard(element.image, element.title, element.price, element.description);})
+function filterCatagories(event) {
+  //dropdown selected.
+  const list = document.getElementById("card-list");
+  const selected = event.target.value; // Gets the selections from the dropdown menu.
+  while (list.hasChildNodes()) list.removeChild(list.firstChild);
+
+  if (selected === "all Catagories") {
+    productList.forEach((element) => {
+      addCard(element.image, element.title, element.price, element.description);
+    });
+  } else {
+    let updated = productList.filter((item) => {
+      return item.category === selected;
+    });
     updated.forEach((element) => {
-        addCard(element.image, element.title, element.price, element.description);})
+      addCard(element.image, element.title, element.price, element.description);
+    });
+  }
 }
 // Hard way
 // const selectedCatagory = document.getElementById("Catagories");
