@@ -32,13 +32,27 @@ function isValidHttpUrl(string) {
   }
 }
 console.log(productList)
-function update(){ //dropdown selected.
-    const list = document.getElementById("card-list");
-    const selected = "" // Gets the selections from the dropdown menu.
+// function update(){ //dropdown selected.
+//     const list = document.getElementById("card-list");
+//     const selected = "" // Gets the selections from the dropdown menu.
+//   while (list.hasChildNodes()) list.removeChild(list.firstChild);
+//     let updated = productList.filter(item =>{
+//         return item.category === selected
+//     })
+//     update.forEach((element) => {
+//         addCard(element.image, element.title, element.price, element.description);})
+// }
+
+const selectedCatagory = document.getElementById("Catagories")
+selectedCatagory.addEventListener("change", (event) =>
+{
+  const list = document.getElementById("card-list");
+    const selected = event.target.value // Gets the selections from the dropdown menu.
   while (list.hasChildNodes()) list.removeChild(list.firstChild);
     let updated = productList.filter(item =>{
         return item.category === selected
     })
-    update.forEach((element) => {
+    updated.forEach((element) => {
         addCard(element.image, element.title, element.price, element.description);})
 }
+)
